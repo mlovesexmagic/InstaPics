@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A39556D1C7FF0A1006BA318 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39556C1C7FF0A1006BA318 /* SignupViewController.swift */; };
 		3A5154061C7FB81D007732B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5154051C7FB81D007732B3 /* AppDelegate.swift */; };
 		3A5154081C7FB81D007732B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5154071C7FB81D007732B3 /* ViewController.swift */; };
 		3A51540B1C7FB81D007732B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A5154091C7FB81D007732B3 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A39556C1C7FF0A1006BA318 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		3A5154021C7FB81D007732B3 /* InstaPics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaPics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A5154051C7FB81D007732B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A5154071C7FB81D007732B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +44,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A39556E1C7FF335006BA318 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				3A5154091C7FB81D007732B3 /* Main.storyboard */,
+			);
+			name = StoryBoard;
+			sourceTree = "<group>";
+		};
+		3A39556F1C7FF345006BA318 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				3A51540E1C7FB81D007732B3 /* LaunchScreen.storyboard */,
+				3A5154111C7FB81D007732B3 /* Info.plist */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
 		3A5153F91C7FB81C007732B3 = {
 			isa = PBXGroup;
 			children = (
@@ -63,12 +82,11 @@
 		3A5154041C7FB81D007732B3 /* InstaPics */ = {
 			isa = PBXGroup;
 			children = (
+				3A51540C1C7FB81D007732B3 /* Assets.xcassets */,
 				3A5154051C7FB81D007732B3 /* AppDelegate.swift */,
 				3A5154231C7FDCEE007732B3 /* ViewController */,
-				3A5154091C7FB81D007732B3 /* Main.storyboard */,
-				3A51540C1C7FB81D007732B3 /* Assets.xcassets */,
-				3A51540E1C7FB81D007732B3 /* LaunchScreen.storyboard */,
-				3A5154111C7FB81D007732B3 /* Info.plist */,
+				3A39556E1C7FF335006BA318 /* StoryBoard */,
+				3A39556F1C7FF345006BA318 /* Others */,
 			);
 			path = InstaPics;
 			sourceTree = "<group>";
@@ -78,6 +96,7 @@
 			children = (
 				3A5154071C7FB81D007732B3 /* ViewController.swift */,
 				3A5154211C7FDCEA007732B3 /* LoginViewController.swift */,
+				3A39556C1C7FF0A1006BA318 /* SignupViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -224,6 +243,7 @@
 			files = (
 				3A5154221C7FDCEA007732B3 /* LoginViewController.swift in Sources */,
 				3A5154081C7FB81D007732B3 /* ViewController.swift in Sources */,
+				3A39556D1C7FF0A1006BA318 /* SignupViewController.swift in Sources */,
 				3A5154061C7FB81D007732B3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

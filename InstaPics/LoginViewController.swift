@@ -13,8 +13,11 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginButton.layer.cornerRadius = 4
 
         // Do any additional setup after loading the view.
     }
@@ -22,6 +25,7 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
     @IBAction func onLogin(sender: AnyObject) {
@@ -40,32 +44,11 @@ class LoginViewController: UIViewController {
 
             }
         }
-        
-        
     }
 
     @IBAction func onSingup(sender: AnyObject) {
-        
-        // initialize a user object
-        let newUser = PFUser()
-        
-        // set user properties
-        newUser.username = usernameField.text
-//        newUser.email = emailLabel.text
-        newUser.password = passwordField.text
-        
-        // call sign up function on the object
-        newUser.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                print("User Registered successfully")
-                // manually segue to logged in view
-                self.performSegueWithIdentifier("loginSegue", sender: nil)
-            }
-        }
-        
-        
+        // manually segue to logged in view
+        self.performSegueWithIdentifier("signupSegue", sender: nil)
     }
     /*
     // MARK: - Navigation
