@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A2EE6B91C88A2EE000FE9B9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EE6B81C88A2EE000FE9B9 /* HomeViewController.swift */; };
+		3A2EE6BB1C88A30A000FE9B9 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EE6BA1C88A30A000FE9B9 /* CaptureViewController.swift */; };
+		3A2EE6BD1C88A320000FE9B9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EE6BC1C88A320000FE9B9 /* ProfileViewController.swift */; };
+		3A2EE6C01C88A58C000FE9B9 /* instaCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EE6BF1C88A58C000FE9B9 /* instaCellTableViewCell.swift */; };
+		3A2EE6C21C88A7EC000FE9B9 /* UserMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EE6C11C88A7EC000FE9B9 /* UserMedia.swift */; };
 		3A39556D1C7FF0A1006BA318 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39556C1C7FF0A1006BA318 /* SignupViewController.swift */; };
 		3A5154061C7FB81D007732B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5154051C7FB81D007732B3 /* AppDelegate.swift */; };
 		3A5154081C7FB81D007732B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5154071C7FB81D007732B3 /* ViewController.swift */; };
@@ -18,6 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A2EE6B81C88A2EE000FE9B9 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3A2EE6BA1C88A30A000FE9B9 /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		3A2EE6BC1C88A320000FE9B9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3A2EE6BF1C88A58C000FE9B9 /* instaCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = instaCellTableViewCell.swift; sourceTree = "<group>"; };
+		3A2EE6C11C88A7EC000FE9B9 /* UserMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMedia.swift; sourceTree = "<group>"; };
 		3A39556C1C7FF0A1006BA318 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		3A5154021C7FB81D007732B3 /* InstaPics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaPics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A5154051C7FB81D007732B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A2EE6BE1C88A567000FE9B9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3A2EE6BF1C88A58C000FE9B9 /* instaCellTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		3A39556E1C7FF335006BA318 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +102,7 @@
 			children = (
 				3A51540C1C7FB81D007732B3 /* Assets.xcassets */,
 				3A5154051C7FB81D007732B3 /* AppDelegate.swift */,
+				3A2EE6BE1C88A567000FE9B9 /* Cell */,
 				3A5154231C7FDCEE007732B3 /* ViewController */,
 				3A39556E1C7FF335006BA318 /* StoryBoard */,
 				3A39556F1C7FF345006BA318 /* Others */,
@@ -97,6 +116,10 @@
 				3A5154071C7FB81D007732B3 /* ViewController.swift */,
 				3A5154211C7FDCEA007732B3 /* LoginViewController.swift */,
 				3A39556C1C7FF0A1006BA318 /* SignupViewController.swift */,
+				3A2EE6B81C88A2EE000FE9B9 /* HomeViewController.swift */,
+				3A2EE6BA1C88A30A000FE9B9 /* CaptureViewController.swift */,
+				3A2EE6BC1C88A320000FE9B9 /* ProfileViewController.swift */,
+				3A2EE6C11C88A7EC000FE9B9 /* UserMedia.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -241,9 +264,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A2EE6B91C88A2EE000FE9B9 /* HomeViewController.swift in Sources */,
+				3A2EE6C01C88A58C000FE9B9 /* instaCellTableViewCell.swift in Sources */,
+				3A2EE6BB1C88A30A000FE9B9 /* CaptureViewController.swift in Sources */,
 				3A5154221C7FDCEA007732B3 /* LoginViewController.swift in Sources */,
 				3A5154081C7FB81D007732B3 /* ViewController.swift in Sources */,
+				3A2EE6BD1C88A320000FE9B9 /* ProfileViewController.swift in Sources */,
 				3A39556D1C7FF0A1006BA318 /* SignupViewController.swift in Sources */,
+				3A2EE6C21C88A7EC000FE9B9 /* UserMedia.swift in Sources */,
 				3A5154061C7FB81D007732B3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

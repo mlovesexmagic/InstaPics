@@ -13,6 +13,8 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var storyboard = UIStoryboard(name: "Main", bundle: nil)
+
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -28,6 +30,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://agile-tundra-85978.herokuapp.com/Parse"
             })
         )
+        
+        
+        if PFUser.currentUser() != nil {
+            print("Current user detected: \(PFUser.currentUser()!.username)")
+            let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+            window?.rootViewController = vc
+            
+        } else {
+            let vc = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as UIViewController
+            window?.rootViewController = vc
+        }
         
         return true
     }
