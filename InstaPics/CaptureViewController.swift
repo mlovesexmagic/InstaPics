@@ -12,12 +12,11 @@ import Parse
 class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var profileImageView: UIImageView!
-    
     @IBOutlet weak var captionField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var imageView = profileImageView
+        let imageView = profileImageView
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
         imageView.userInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
@@ -29,6 +28,7 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     func imageTapped(img: AnyObject)
     {
         let vc = UIImagePickerController()
@@ -74,4 +74,7 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
 
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+    }
 }

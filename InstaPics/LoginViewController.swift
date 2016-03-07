@@ -15,11 +15,40 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+    //background gradient color variables
+    var gradient : CAGradientLayer?
+    var toColors : AnyObject?
+    var fromColors : AnyObject?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loginButton.layer.cornerRadius = 4
+        bgGradientsColor()
 
-        // Do any additional setup after loading the view.
+        
+        //        if (usernameField.text!.isEmpty) {
+        //            let alert = UIAlertView()
+        //            alert.title = "No Text"
+        //            alert.message = "Please Enter Text In The Box"
+        //            alert.addButtonWithTitle("Ok")
+        //            alert.show()
+        //        }
+        loginButton.enabled = false
+        loginButton.alpha = 0.5
+        usernameField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        passwordField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+    }
+    
+    //disable Login Button when username/password fields are empty. Enabled when both are filled
+    func textFieldDidChange(textField: UITextField) {
+        if (usernameField.text!.isEmpty || passwordField.text!.isEmpty) {
+            loginButton.enabled = false
+            loginButton.alpha = 0.5
+        } else {
+            loginButton.enabled = true
+            loginButton.alpha = 1.0
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +57,12 @@ class LoginViewController: UIViewController {
         
     }
     
+
+
+    
+    
+    
+    // user log in method
     @IBAction func onLogin(sender: AnyObject) {
         
         let username = usernameField.text ?? ""
@@ -46,10 +81,18 @@ class LoginViewController: UIViewController {
         }
     }
 
-    @IBAction func onSingup(sender: AnyObject) {
-        // manually segue to logged in view
-        self.performSegueWithIdentifier("signupSegue", sender: nil)
+    
+//    // switch to sign up view
+//    @IBAction func onSingup(sender: AnyObject) {
+//        // manually segue to logged in view
+//        self.performSegueWithIdentifier("signupSegue", sender: nil)
+//    }
+//    
+    // dismiss keyboard
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
     }
+    
     /*
     // MARK: - Navigation
 
@@ -60,4 +103,50 @@ class LoginViewController: UIViewController {
     }
     */
 
+
+     func bgGradientsColor() {
+
+        self.gradient = CAGradientLayer()
+        self.gradient?.frame = self.view.bounds
+        self.gradient?.colors = [UIColor.cyanColor().CGColor, UIColor.lightGrayColor().CGColor]
+        self.view.layer.insertSublayer(self.gradient!, atIndex: 0)
+        
+        self.toColors = [UIColor.magentaColor().CGColor, UIColor.orangeColor().CGColor]
+        //self.toColors = [UIColor.orangeColor().CGColor, UIColor.cyanColor().CGColor]
+       //self.toColors = [UIColor.purpleColor().CGColor, UIColor.magentaColor().CGColor]
+
+        //cyanColor(), magentaColor(), redColor(), greenColor(), purpleColor(), orangeColor()
+
+        animateLayer()
+        gradient!.startPoint = CGPointZero;
+        gradient!.endPoint = CGPointMake(1, 1);
+    }
+    
+    func animateLayer(){
+        
+        self.fromColors = self.gradient?.colors
+        self.gradient!.colors = self.toColors! as? [AnyObject]
+        
+        let animation : CABasicAnimation = CABasicAnimation(keyPath: "colors")
+        animation.delegate = self
+        animation.fromValue = fromColors
+        animation.toValue = toColors
+        animation.duration = 7.00
+        animation.removedOnCompletion = true
+        animation.fillMode = kCAFillModeForwards
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.delegate = self
+        
+        self.gradient?.addAnimation(animation, forKey:"animateGradient")
+    }
+    
+    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+        
+        self.toColors = self.fromColors;
+        self.fromColors = self.gradient?.colors
+        
+        animateLayer()
+    }
+    
+    
 }
