@@ -153,8 +153,7 @@
                         <outlet property="backToLogin" destination="lxg-uZ-SkQ" id="92v-nn-YBr"/>
                         <outlet property="emailTextField" destination="ijn-8O-7Vj" id="KAS-3h-ZIt"/>
                         <outlet property="nextButton" destination="ta1-pU-cCS" id="8CR-IT-lFV"/>
-                        <segue destination="hFo-Xk-tI1" kind="presentation" identifier="signinSegue" id="OUx-qb-Gjy"/>
-                        <segue destination="RfG-HS-Iyy" kind="presentation" identifier="emailToSignup" modalTransitionStyle="partialCurl" id="Ldg-8h-rKn"/>
+                        <segue destination="RfG-HS-Iyy" kind="presentation" identifier="emailToSignup" animates="NO" id="Ldg-8h-rKn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDh-eG-9FS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -209,11 +208,14 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUp:" destination="RfG-HS-Iyy" eventType="touchUpInside" id="Y4j-MH-Muy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkk-lf-n9U">
                                 <rect key="frame" x="0.0" y="516" width="320" height="52"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Already have an account? Sign in.">
+                                <state key="normal" title="Back">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -229,9 +231,10 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="createButton" destination="mw0-dg-xJc" id="0pu-Jv-RkM"/>
-                        <outlet property="passwordField" destination="ZqE-Yn-H8s" id="EIP-xd-Dgg"/>
-                        <outlet property="rePasswordField" destination="MVO-dH-QTD" id="uHw-TM-xlO"/>
-                        <outlet property="usernameField" destination="RrL-ql-nwu" id="tWe-6P-a9B"/>
+                        <outlet property="passwordField" destination="ZqE-Yn-H8s" id="c7R-Kk-7Ui"/>
+                        <outlet property="rePasswordField" destination="MVO-dH-QTD" id="Sum-Ne-I6D"/>
+                        <outlet property="usernameField" destination="RrL-ql-nwu" id="Z8Y-tg-M5g"/>
+                        <segue destination="hFo-Xk-tI1" kind="presentation" identifier="signUpSegue" id="IEg-6v-c1b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTw-ry-eIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -241,7 +244,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="975" y="284"/>
+            <point key="canvasLocation" x="961" y="284"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="cz2-Fa-CNI">
@@ -462,6 +465,6 @@
         <image name="mainBG" width="850" height="586"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6T7-Py-EpT"/>
+        <segue reference="IEg-6v-c1b"/>
     </inferredMetricsTieBreakers>
 </document>
