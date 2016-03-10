@@ -11,9 +11,16 @@ import Parse
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
+//    @IBOutlet weak var usernameField: UITextField!
+//    @IBOutlet weak var passwordField: UITextField!
+//    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
+    
+    var LoginView: Login!
+    var EmailView: Email!
+
+
+    
     
     //background gradient color variables
     var gradient : CAGradientLayer?
@@ -23,85 +30,70 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginButton.layer.cornerRadius = 4
         bgGradientsColor()
-
         
-        //        if (usernameField.text!.isEmpty) {
-        //            let alert = UIAlertView()
-        //            alert.title = "No Text"
-        //            alert.message = "Please Enter Text In The Box"
-        //            alert.addButtonWithTitle("Ok")
-        //            alert.show()
-        //        }
-        loginButton.enabled = false
-        loginButton.alpha = 0.5
-        usernameField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
-        passwordField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
-    }
-    
-    //disable Login Button when username/password fields are empty. Enabled when both are filled
-    func textFieldDidChange(textField: UITextField) {
-        if (usernameField.text!.isEmpty || passwordField.text!.isEmpty) {
-            loginButton.enabled = false
-            loginButton.alpha = 0.5
-        } else {
-            loginButton.enabled = true
-            loginButton.alpha = 1.0
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.LoginView = Login(frame: CGRect(x: 0, y: 0, width: 320, height: 568))
+        //self.signupButton.addTarget(self, action: "myLoginDismissPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(LoginView)
         
     }
     
-
-
-    
-    
-    
-    // user log in method
-    @IBAction func onLogin(sender: AnyObject) {
-        
-        let username = usernameField.text ?? ""
-        let password = passwordField.text ?? ""
-        
-        PFUser.logInWithUsernameInBackground(username, password: password) { (user: PFUser?, error: NSError?) -> Void in
-            if let error = error {
-                print("User login failed.")
-                print(error.localizedDescription)
-            } else {
-                print("User logged in successfully")
-                // display view controller that needs to shown after successful login
-                self.performSegueWithIdentifier("loginSegue", sender: nil)
-
-            }
-        }
-    }
-
-    
-//    // switch to sign up view
-//    @IBAction func onSingup(sender: AnyObject) {
-//        // manually segue to logged in view
-//        self.performSegueWithIdentifier("signupSegue", sender: nil)
+//    func myLoginDismissPressed(sender: AnyObject) {
+//        self.LoginView.removeFromSuperview()
 //    }
-//    
-    // dismiss keyboard
-    @IBAction func onTap(sender: AnyObject) {
-        view.endEditing(true)
-    }
     
-    /*
-    // MARK: - Navigation
+//    //disable Login Button when username/password fields are empty. Enabled when both are filled
+//    func textFieldDidChange(textField: UITextField) {
+//        if (usernameField.text!.isEmpty || passwordField.text!.isEmpty) {
+//            loginButton.enabled = false
+//            loginButton.alpha = 0.5
+//        } else {
+//            loginButton.enabled = true
+//            loginButton.alpha = 1.0
+//        }
+//    }
+//
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//        // Dispose of any resources that can be recreated.
+//        
+//    }
+    
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+
+    
+    
+    
+//    // user log in method
+//    @IBAction func onLogin(sender: AnyObject) {
+//        
+//        let username = usernameField.text ?? ""
+//        let password = passwordField.text ?? ""
+//        
+//        PFUser.logInWithUsernameInBackground(username, password: password) { (user: PFUser?, error: NSError?) -> Void in
+//            if let error = error {
+//                print("User login failed.")
+//                print(error.localizedDescription)
+//            } else {
+//                print("User logged in successfully")
+//                // display view controller that needs to shown after successful login
+//                self.performSegueWithIdentifier("loginSegue", sender: nil)
+//
+//            }
+//        }
+//    }
+
+    
+//    @IBAction func onSignUp(sender: AnyObject) {
+//        self.EmailView = Email(frame: CGRect(x: 0, y: 0, width: 320, height: 568))
+//        self.EmailView.BackToLoginButton.addTarget(self, action: "myDismissPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+//        self.view.addSubview(EmailView)
+//
+//    }
+
+//    @IBAction func onTap(sender: AnyObject) {
+//        view.endEditing(true)
+//    }
 
 
      func bgGradientsColor() {
@@ -147,6 +139,27 @@ class LoginViewController: UIViewController {
         
         animateLayer()
     }
+    
+  
+    
+ 
+    
+
+    @IBAction func onSignUpTapped(sender: AnyObject) {
+        self.LoginView.removeFromSuperview()
+        self.EmailView = Email(frame: CGRect(x: 0, y: 0, width: 320, height: 568))
+        self.EmailView.BackToLoginButton.addTarget(self, action: "myEmailDismissPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(EmailView)
+    }
+    
+    /// testing
+    func myEmailDismissPressed(sender:UIButton) {
+        self.EmailView.removeFromSuperview()
+    }
+    
+    
+    
+    
     
     
 }

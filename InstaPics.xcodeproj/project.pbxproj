@@ -17,8 +17,11 @@
 		3A51540D1C7FB81D007732B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A51540C1C7FB81D007732B3 /* Assets.xcassets */; };
 		3A5154101C7FB81D007732B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A51540E1C7FB81D007732B3 /* LaunchScreen.storyboard */; };
 		3A5154221C7FDCEA007732B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5154211C7FDCEA007732B3 /* LoginViewController.swift */; };
+		3A563AFC1C8FCDB700F8D05F /* Email.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A563AFB1C8FCDB700F8D05F /* Email.xib */; };
+		3A563AFF1C8FCDD000F8D05F /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A563AFE1C8FCDD000F8D05F /* Email.swift */; };
+		3A563B021C8FDDD000F8D05F /* LogIn.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A563B011C8FDDD000F8D05F /* LogIn.xib */; };
+		3A563B041C8FDDDB00F8D05F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A563B031C8FDDDB00F8D05F /* Login.swift */; };
 		3A59BE791C8D0A3F00C73635 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59BE781C8D0A3F00C73635 /* SignUpViewController.swift */; };
-		3A59BE7B1C8D0A9200C73635 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59BE7A1C8D0A9200C73635 /* EmailViewController.swift */; };
 		B2D02A5E227BCF1850F0966D /* Pods_InstaPics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 878ED65848C0AACA75EF8059 /* Pods_InstaPics.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,8 +38,11 @@
 		3A51540F1C7FB81D007732B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A5154111C7FB81D007732B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A5154211C7FDCEA007732B3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3A563AFB1C8FCDB700F8D05F /* Email.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Email.xib; sourceTree = "<group>"; };
+		3A563AFE1C8FCDD000F8D05F /* Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
+		3A563B011C8FDDD000F8D05F /* LogIn.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogIn.xib; sourceTree = "<group>"; };
+		3A563B031C8FDDDB00F8D05F /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		3A59BE781C8D0A3F00C73635 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ../SignUpViewController.swift; sourceTree = "<group>"; };
-		3A59BE7A1C8D0A9200C73635 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		878ED65848C0AACA75EF8059 /* Pods_InstaPics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaPics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C429B818094A0649F5337E8C /* Pods-InstaPics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaPics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaPics/Pods-InstaPics.debug.xcconfig"; sourceTree = "<group>"; };
 		C53A236486F20CB048AB27A8 /* Pods-InstaPics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaPics.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaPics/Pods-InstaPics.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				3A5154091C7FB81D007732B3 /* Main.storyboard */,
+				3A563B001C8FDDBC00F8D05F /* Log In */,
+				3A563AFD1C8FCDBD00F8D05F /* Email */,
 			);
 			name = StoryBoard;
 			sourceTree = "<group>";
@@ -115,13 +123,30 @@
 			isa = PBXGroup;
 			children = (
 				3A5154211C7FDCEA007732B3 /* LoginViewController.swift */,
-				3A59BE7A1C8D0A9200C73635 /* EmailViewController.swift */,
 				3A59BE781C8D0A3F00C73635 /* SignUpViewController.swift */,
 				3A2EE6B81C88A2EE000FE9B9 /* HomeViewController.swift */,
 				3A2EE6BA1C88A30A000FE9B9 /* CaptureViewController.swift */,
 				3A2EE6BC1C88A320000FE9B9 /* ProfileViewController.swift */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		3A563AFD1C8FCDBD00F8D05F /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				3A563AFB1C8FCDB700F8D05F /* Email.xib */,
+				3A563AFE1C8FCDD000F8D05F /* Email.swift */,
+			);
+			name = Email;
+			sourceTree = "<group>";
+		};
+		3A563B001C8FDDBC00F8D05F /* Log In */ = {
+			isa = PBXGroup;
+			children = (
+				3A563B011C8FDDD000F8D05F /* LogIn.xib */,
+				3A563B031C8FDDDB00F8D05F /* Login.swift */,
+			);
+			name = "Log In";
 			sourceTree = "<group>";
 		};
 		3A59BE6F1C8A8F7900C73635 /* Model */ = {
@@ -213,7 +238,9 @@
 			files = (
 				3A5154101C7FB81D007732B3 /* LaunchScreen.storyboard in Resources */,
 				3A51540D1C7FB81D007732B3 /* Assets.xcassets in Resources */,
+				3A563AFC1C8FCDB700F8D05F /* Email.xib in Resources */,
 				3A51540B1C7FB81D007732B3 /* Main.storyboard in Resources */,
+				3A563B021C8FDDD000F8D05F /* LogIn.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,11 +300,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A2EE6B91C88A2EE000FE9B9 /* HomeViewController.swift in Sources */,
-				3A59BE7B1C8D0A9200C73635 /* EmailViewController.swift in Sources */,
+				3A563B041C8FDDDB00F8D05F /* Login.swift in Sources */,
 				3A2EE6C01C88A58C000FE9B9 /* instaCellTableViewCell.swift in Sources */,
 				3A2EE6BB1C88A30A000FE9B9 /* CaptureViewController.swift in Sources */,
 				3A5154221C7FDCEA007732B3 /* LoginViewController.swift in Sources */,
 				3A59BE791C8D0A3F00C73635 /* SignUpViewController.swift in Sources */,
+				3A563AFF1C8FCDD000F8D05F /* Email.swift in Sources */,
 				3A2EE6BD1C88A320000FE9B9 /* ProfileViewController.swift in Sources */,
 				3A2EE6C21C88A7EC000FE9B9 /* UserMedia.swift in Sources */,
 				3A5154061C7FB81D007732B3 /* AppDelegate.swift in Sources */,

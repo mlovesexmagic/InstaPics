@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SignUpViewController: UIViewController {
 
@@ -47,27 +48,49 @@ class SignUpViewController: UIViewController {
     }
     
     
-    //    @IBAction func signUp(sender: AnyObject) {
-    //
-    //        // initialize a user object
-    //        let newUser = PFUser()
-    //
-    //        // set user properties
-    //        // newUser.username = userNameField.text
-    //        //        newUser.email = emailLabel.text
-    //        //   newUser.password = passwordField.text
-    //
-    //        // call sign up function on the object
-    //        newUser.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-    //            if let error = error {
-    //                print(error.localizedDescription)
-    //            } else {
-    //                print("User Registered successfully")
-    //                // manually segue to logged in view
-    //                self.performSegueWithIdentifier("signinSegue", sender: nil)
-    //            }
-    //        }
-    //    }
+    @IBAction func signUp(sender: AnyObject) {
+    
+        // initialize a user object
+        let newUser = PFUser()
+    
+            // set user properties
+        newUser.username = usernameField.text
+        newUser.password = passwordField.text
+        
+        if(passwordField.text == rePasswordField.text){
+            // call sign up function on the object
+            newUser.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    print("User Registered successfully")
+                    // manually segue to logged in view
+                    self.performSegueWithIdentifier("signUpSegue", sender: nil)
+                    //self.tabBarController?.selectedIndex = 0
+                    
+                }
+                
+            }
+           
+            
+
+            
+        } //end if
+        else {
+                        let alert = UIAlertView()
+                        alert.title = "Password Did Not Match"
+                        alert.message = "Re-Enter your password"
+                        alert.addButtonWithTitle("Ok")
+                        alert.show()
+                    
+            
+        }
+        
+       
+        
+        
+        
+    } //end signUp
     
 
 
