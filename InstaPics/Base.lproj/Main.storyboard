@@ -290,13 +290,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="aWe-PE-b3p">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="l2W-SC-zAu">
-                            <connections>
-                                <action selector="logOutClicked:" destination="V98-Mv-9w9" id="Pk7-EH-oPg"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="aWe-PE-b3p"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="yQn-kd-aPe" id="Etf-Ou-wLn"/>
@@ -410,10 +404,44 @@
                     <view key="view" contentMode="scaleToFill" id="j9b-Q5-3qe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lkb-Mq-cN0">
+                                <rect key="frame" x="0.0" y="-7" width="320" height="202"/>
+                                <color key="backgroundColor" red="0.4719472099" green="0.782755278" blue="0.81665166879999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Handle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVO-eB-5yi">
+                                <rect key="frame" x="132" y="257" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VC4-JL-lL1">
+                                <rect key="frame" x="252" y="489" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="onLogout:" destination="Wyn-Ej-Q1l" eventType="touchUpInside" id="R9K-VH-Yf6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86a-S4-F5l">
+                                <rect key="frame" x="108" y="142" width="105" height="105"/>
+                                <color key="backgroundColor" red="0.30980392159999998" green="0.68235294120000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onProfileBtnClicked:" destination="Wyn-Ej-Q1l" eventType="touchUpInside" id="Qud-qU-yXP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="9j1-yX-6Bc"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="handleLabel" destination="SVO-eB-5yi" id="FXd-ev-pzy"/>
+                        <outlet property="logoutBtn" destination="VC4-JL-lL1" id="qeM-L4-5ha"/>
+                        <outlet property="prifileImageBtn" destination="86a-S4-F5l" id="36Y-gn-c8Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVF-hj-Bzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -66,6 +66,7 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
                 print("Posted to Parse")
                 self.profileImageView.image = nil
                 self.captionField.text = ""
+                self.tabBarController?.selectedIndex  = 0
                 
             }
             else {

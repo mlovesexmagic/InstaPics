@@ -95,34 +95,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.refreshControl.endRefreshing()
     }
     
-    @IBAction func logOutClicked(sender: AnyObject) {
-        
-        // PFUser.currentUser() will now be nil
-        print("User logged out successfully")
-        PFUser.logOut()
-        NSNotificationCenter.defaultCenter().postNotificationName(userDidLogoutNotification, object: nil)
-        
-//        let vController = self.storyboard!.instantiateViewControllerWithIdentifier("loginView") as UIViewController
-//        self.presentViewController(vController, animated: true, completion: nil)
-
-   //     -----------------------------------------------------------------
-//        PFUser.logOutInBackgroundWithBlock { (error: NSError?) -> Void in
-//            if error == nil {
-//                //currentUser?.logout()
-//                // print("Notification sent")
-//                NSNotificationCenter.defaultCenter().postNotificationName(self.userDidLogoutNotification, object: nil);
-//                print("User logged out")
-//                let vController = self.storyboard!.instantiateViewControllerWithIdentifier("loginView") as UIViewController
-//                self.presentViewController(vController, animated: true, completion: nil)
-//                //self.dismissViewControllerAnimated(false, completion: nil)
-//                //self.performSegueWithIdentifier("logOutSegueID", sender: nil)
-//            }
-//            else {
-//                print("Error while logging out")
-//            }
-//        }
-        
+    override func viewWillAppear(animated: Bool) {
+        self.refresh(tableView)
     }
-
-
+    
 }
