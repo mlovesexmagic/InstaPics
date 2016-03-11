@@ -9,6 +9,8 @@
 import UIKit
 import Parse
 
+let userDidLogoutNotification = "userDidLogoutNotification"
+
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
 
     @IBOutlet weak var prifileImageBtn: UIButton!

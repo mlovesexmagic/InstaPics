@@ -9,8 +9,6 @@
 import UIKit
 import Parse
 
-let userDidLogoutNotification = "userDidLogoutNotification"
-
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!

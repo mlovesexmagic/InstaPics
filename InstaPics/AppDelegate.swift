@@ -44,7 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "goToHomeView", name: goToHomeViewNotification, object: nil)
 
+        
         return true
     }
 
@@ -52,6 +54,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //  print("Notification received")
         let vc = storyboard.instantiateViewControllerWithIdentifier("loginView") as UIViewController
         window?.rootViewController = vc
+    }
+    
+    func goToHomeView() {
+        //  print("Notification received")
+        let vc2 = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        self.window?.rootViewController = vc2
     }
     
     func applicationWillResignActive(application: UIApplication) {

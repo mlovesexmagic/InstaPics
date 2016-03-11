@@ -17,6 +17,7 @@
 		3A51540D1C7FB81D007732B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A51540C1C7FB81D007732B3 /* Assets.xcassets */; };
 		3A5154101C7FB81D007732B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A51540E1C7FB81D007732B3 /* LaunchScreen.storyboard */; };
 		3A5154221C7FDCEA007732B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5154211C7FDCEA007732B3 /* LoginViewController.swift */; };
+		3A5201771C923962000755B3 /* ProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5201761C923962000755B3 /* ProcessingViewController.swift */; };
 		3A59BE791C8D0A3F00C73635 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59BE781C8D0A3F00C73635 /* SignUpViewController.swift */; };
 		3A59BE7B1C8D0A9200C73635 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59BE7A1C8D0A9200C73635 /* EmailViewController.swift */; };
 		B2D02A5E227BCF1850F0966D /* Pods_InstaPics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 878ED65848C0AACA75EF8059 /* Pods_InstaPics.framework */; };
@@ -35,6 +36,7 @@
 		3A51540F1C7FB81D007732B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A5154111C7FB81D007732B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A5154211C7FDCEA007732B3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3A5201761C923962000755B3 /* ProcessingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingViewController.swift; sourceTree = "<group>"; };
 		3A59BE781C8D0A3F00C73635 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ../SignUpViewController.swift; sourceTree = "<group>"; };
 		3A59BE7A1C8D0A9200C73635 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		878ED65848C0AACA75EF8059 /* Pods_InstaPics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaPics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 				3A2EE6B81C88A2EE000FE9B9 /* HomeViewController.swift */,
 				3A2EE6BA1C88A30A000FE9B9 /* CaptureViewController.swift */,
 				3A2EE6BC1C88A320000FE9B9 /* ProfileViewController.swift */,
+				3A5201761C923962000755B3 /* ProcessingViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				3A2EE6B91C88A2EE000FE9B9 /* HomeViewController.swift in Sources */,
 				3A59BE7B1C8D0A9200C73635 /* EmailViewController.swift in Sources */,
 				3A2EE6C01C88A58C000FE9B9 /* instaCellTableViewCell.swift in Sources */,
+				3A5201771C923962000755B3 /* ProcessingViewController.swift in Sources */,
 				3A2EE6BB1C88A30A000FE9B9 /* CaptureViewController.swift in Sources */,
 				3A5154221C7FDCEA007732B3 /* LoginViewController.swift in Sources */,
 				3A59BE791C8D0A3F00C73635 /* SignUpViewController.swift in Sources */,

@@ -12,7 +12,7 @@ import Parse
 class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var captionField: UITextField!
+    var editedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,7 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
+    //Step 1: Picking a Picture from the Camera Roll
     func imageTapped(img: AnyObject)
     {
         let vc = UIImagePickerController()
@@ -38,10 +39,12 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
+    //Step 2: Implement the delegate
     func imagePickerController(picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [String : AnyObject]) {
             let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-            let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+            editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+            
             
             profileImageView.image = editedImage
             dismissViewControllerAnimated(true, completion: { () -> Void in
@@ -60,22 +63,20 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         return newImage
     }
     
-    @IBAction func onSubmit(sender: AnyObject) {
-        UserMedia.postUserImage(profileImageView.image, withCaption: captionField.text) { (success: Bool, error: NSError?) -> Void in
-            if success {
-                print("Posted to Parse")
-                self.profileImageView.image = nil
-                self.captionField.text = ""
-                self.tabBarController?.selectedIndex  = 0
-                
-            }
-            else {
-                print("Can't post to parse")
-            }
-        }
-    }
+
 
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        //self.performSegueWithIdentifier("selectToUpload", sender: nil)
+        let passThisImage = editedImage
+        let detailViewController = segue.destinationViewController as! ProcessingViewController
+        detailViewController.readyImage = passThisImage!
+
     }
 }

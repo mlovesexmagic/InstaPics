@@ -249,7 +249,7 @@
         <!--Home View Controller-->
         <scene sceneID="cz2-Fa-CNI">
             <objects>
-                <viewController id="V98-Mv-9w9" customClass="HomeViewController" customModule="InstaPics" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewID" id="V98-Mv-9w9" customClass="HomeViewController" customModule="InstaPics" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sX4-OM-E4g"/>
                         <viewControllerLayoutGuide type="bottom" id="xj0-PF-sam"/>
@@ -338,18 +338,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r9e-yG-tgq">
-                                <rect key="frame" x="20" y="72" width="280" height="168"/>
+                                <rect key="frame" x="20" y="72" width="280" height="280"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ii3-h8-eM0">
-                                <rect key="frame" x="20" y="334" width="280" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYa-sE-6Mr">
-                                <rect key="frame" x="135" y="481" width="50" height="30"/>
-                                <state key="normal" title="Upload"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtC-Hk-Id3">
+                                <rect key="frame" x="144" y="422" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="onSubmit:" destination="B0i-SF-tfg" eventType="touchUpInside" id="bux-Hi-qDj"/>
+                                    <segue destination="CIG-vL-sws" kind="presentation" identifier="selectToUpload" animates="NO" id="iwK-j0-OHj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -361,7 +356,6 @@
                     <navigationItem key="navigationItem" id="Tou-oI-rvR"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="captionField" destination="Ii3-h8-eM0" id="Pc7-zn-yhD"/>
                         <outlet property="profileImageView" destination="r9e-yG-tgq" id="G0K-0V-a23"/>
                     </connections>
                 </viewController>
@@ -374,10 +368,50 @@
             </objects>
             <point key="canvasLocation" x="1602" y="1831"/>
         </scene>
+        <!--Processing View Controller-->
+        <scene sceneID="4Tq-vL-uFR">
+            <objects>
+                <viewController id="CIG-vL-sws" customClass="ProcessingViewController" customModule="InstaPics" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="npo-Xq-frq"/>
+                        <viewControllerLayoutGuide type="bottom" id="OiN-jY-UEj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vm0-UF-xoK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wg2-Hd-fac">
+                                <rect key="frame" x="148" y="413" width="50" height="30"/>
+                                <state key="normal" title="Upload"/>
+                                <connections>
+                                    <action selector="onUpload:" destination="CIG-vL-sws" eventType="touchUpInside" id="dQo-n4-C7e"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3D8-0L-IrP">
+                                <rect key="frame" x="20" y="28" width="60" height="60"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write a caption..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vvq-zj-u6Q">
+                                <rect key="frame" x="88" y="36" width="226" height="52"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="captionField" destination="Vvq-zj-u6Q" id="Oyd-Tq-KtR"/>
+                        <outlet property="uplodaImage" destination="3D8-0L-IrP" id="9bl-aR-954"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xfc-Xi-Cnn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1984" y="1831"/>
+        </scene>
         <!--Home-->
         <scene sceneID="8pB-1t-A8Y">
             <objects>
-                <navigationController storyboardIdentifier="LoginViewController" automaticallyAdjustsScrollViewInsets="NO" id="OCW-hH-RZJ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNav" automaticallyAdjustsScrollViewInsets="NO" id="OCW-hH-RZJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="Home" id="xJH-V9-SaR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CB9-6p-Esi">
