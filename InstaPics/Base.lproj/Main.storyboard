@@ -371,7 +371,7 @@
         <!--Processing View Controller-->
         <scene sceneID="4Tq-vL-uFR">
             <objects>
-                <viewController id="CIG-vL-sws" customClass="ProcessingViewController" customModule="InstaPics" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProcessingViewID" id="CIG-vL-sws" customClass="ProcessingViewController" customModule="InstaPics" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="npo-Xq-frq"/>
                         <viewControllerLayoutGuide type="bottom" id="OiN-jY-UEj"/>

@@ -21,13 +21,34 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         imageView.userInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
         
-        // Do any additional setup after loading the view.
+       
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        imageTapped()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        NSNotificationCenter.defaultCenter().postNotificationName(goToHomeViewNotification, object: nil)
+    }
+    
+  
+    
+    //Step 1: Picking a Picture from the Camera Roll
+    func imageTapped()
+    {
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        vc.allowsEditing = true
+        vc.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+
     
     //Step 1: Picking a Picture from the Camera Roll
     func imageTapped(img: AnyObject)
@@ -44,10 +65,9 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         didFinishPickingMediaWithInfo info: [String : AnyObject]) {
             let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
             editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
-            
-            
+    
             profileImageView.image = editedImage
-            dismissViewControllerAnimated(true, completion: { () -> Void in
+            dismissViewControllerAnimated(false, completion: { () -> Void in
             })
     }
     
